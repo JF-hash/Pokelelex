@@ -9,6 +9,8 @@ export interface Pokemon {
   nome: string;
   tipos: string[];
   imagem: string | null;
+  altura: number;  // em metros
+  peso: number;    // em quilogramas
 }
 
 // Só a parte da resposta da PokéAPI que usamos.
@@ -17,6 +19,8 @@ interface RespostaPokeApi {
   name: string;
   types: { type: { name: string } }[];
   sprites: { front_default: string | null };
+  height: number;  // decímetros
+  weight: number;  // hectogramas
 }
 
 const cache = new Map<string, Pokemon>();
@@ -41,6 +45,8 @@ function resumir(dados: RespostaPokeApi): Pokemon {
     nome: dados.name,
     tipos: dados.types.map((t) => t.type.name),
     imagem: dados.sprites.front_default,
+    altura: dados.height / 10,   // decímetros → metros
+    peso: dados.weight / 10,     // hectogramas → quilogramas
   };
 }
 

@@ -33,6 +33,8 @@ function mostrarPokemon(p) {
   const img = $('imagem');
   img.hidden = !p.imagem;
   if (p.imagem) { img.src = p.imagem; img.alt = p.nome; }
+  $('altura').textContent = `${p.altura.toFixed(1)} m`;
+  $('peso').textContent = `${p.peso.toFixed(1)} kg`;
 }
 
 function travarBotoes(travar) {
@@ -59,5 +61,9 @@ $('busca').addEventListener('submit', (e) => {
 });
 $('anterior').addEventListener('click', () => buscar(String(numeroAtual - 1)));
 $('proximo').addEventListener('click', () => buscar(String(numeroAtual + 1)));
+$('aleatorio').addEventListener('click', () => {
+  const sorteio = Math.floor(Math.random() * 151) + 1;
+  buscar(String(sorteio));
+});
 
 buscar('1');

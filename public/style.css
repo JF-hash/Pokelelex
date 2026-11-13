@@ -77,6 +77,35 @@ body {
 .tipo-dark     { background: #705848; }
 .tipo-fairy    { background: #ee99ac; }
 
+.medidas {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 10px 0 0;
+  padding: 8px;
+  background: #e2e8f0;
+  border-radius: 6px;
+}
+
+.medida {
+  text-align: center;
+}
+
+.medida dt {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 0;
+}
+
+.medida dd {
+  font-size: 15px;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 2px 0 0;
+}
+
 .aviso {
   margin: 0 0 8px;
   padding: 6px;
